@@ -1,6 +1,8 @@
 # Foot Predictor
 
 [![Tests](https://github.com/foot-predictor/api/workflows/Tests/badge.svg)](https://github.com/foot-predictor/api/actions/workflows/tests.yml)
+[![Coverage](https://coverage-badge.samuelcolvin.workers.dev/foot-predictor/api.svg)](https://coverage-badge.samuelcolvin.workers.dev/redirct/foot-predictor/api)
+
 
 
 ## Technology Stack and Features
