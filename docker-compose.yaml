@@ -1,0 +1,16 @@
+services:
+  api:
+    build: ./app
+    tty: true
+    init: true
+    command: "bash"
+    env_file:
+      - .env
+    volumes:
+      - ./app:/app
+      - /app/.venv
+    ports:
+      - "8000:8000"
+
+volumes:
+  postgres_data:
