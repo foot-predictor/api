@@ -1,4 +1,4 @@
-FROM python:3.12
+FROM python:latest
 
 ENV PYTHONUNBUFFERED=1
 
@@ -28,4 +28,5 @@ COPY . .
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync
 
-CMD ["fastapi", "run", "--workers", "4", "--host", "0.0.0.0", "--port", "10000"]
+#CMD ["fastapi", "run", "--workers", "4", "--host", "0.0.0.0", "--port", "10000"]
+CMD ["uvicorn", "main:app", "--workers", "4", "--host", "0.0.0.0", "--port", "10000"]
