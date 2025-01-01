@@ -67,6 +67,7 @@ ignore = [
     "B008",
     "W191",
     "B904",
+    "E402"
 ]
 
 [tool.ruff.lint.pyupgrade]

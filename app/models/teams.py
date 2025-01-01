@@ -4,8 +4,7 @@ from functools import cached_property
 from pydantic import computed_field
 from sqlmodel import Field, Relationship, SQLModel
 
-from models import Competition
-from models.competitions import CompetitionTeamLink, CompetitionType
+from models.competitions import Competition, CompetitionTeamLink, CompetitionType
 
 
 class TeamBase(SQLModel):

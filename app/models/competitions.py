@@ -1,10 +1,10 @@
 from datetime import date
 from enum import Enum
+from typing import Annotated
 
+from pydantic import BeforeValidator, PlainSerializer
 from sqlalchemy import Column, String
 from sqlmodel import Field, Relationship, SQLModel
-
-from models.teams import Team
 
 LEAGUE = "league"
 CUP = "cup"
@@ -13,6 +13,13 @@ CUP = "cup"
 class CompetitionType(str, Enum):
     LEAGUE = "league"
     CUP = "cup"
+
+
+CompetitionTypeField = Annotated[
+    CompetitionType,
+    BeforeValidator(lambda v: CompetitionType(v)),
+    PlainSerializer(lambda v: CompetitionType(v).value),
+]
 
 
 class CompetitionTeamLink(SQLModel, table=True):
@@ -26,7 +33,7 @@ class CompetitionTeamLink(SQLModel, table=True):
 
 class Competition(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)
-    type_: CompetitionType = Field(sa_column=Column(String, nullable=False))
+    type_: CompetitionTypeField = Field(sa_column=Column(String, nullable=False))
     name: str
     place_code: str
     place_name: str
@@ -45,3 +52,8 @@ class Competition(SQLModel, table=True):
 
     def __hash__(self):
         return hash(self.id)
+
+
+from models.teams import Team
+
+Competition.model_rebuild()

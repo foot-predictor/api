@@ -44,7 +44,7 @@ class FootballStatsApiService:
         return response.json()
 
     @staticmethod
-    def _flatten_statistics(row: pd.Series[Any]) -> pd.Series[int]:
+    def _flatten_statistics(row: pd.Series) -> pd.Series:
         statistics = {}
         for stat in row["statistics"]:
             home_stat_key = f"home.{stat['type'].lower().replace(' ', '_')}"
@@ -57,7 +57,7 @@ class FootballStatsApiService:
                 )
             if away_stat_key not in statistics:
                 result = re.search(r"\d+", stat["away"])
-                statistics[home_stat_key] = (
+                statistics[away_stat_key] = (
                     int(result.group()) if result is not None else np.nan
                 )
 
@@ -71,7 +71,7 @@ class FootballStatsApiService:
                     int(result.group()) if result is not None else np.nan
                 )
                 result = re.search(r"\d+", stat["away"])
-                statistics[home_stat_key] = (
+                statistics[away_stat_key] = (
                     int(result.group()) if result is not None else np.nan
                 )
 
