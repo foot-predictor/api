@@ -30,6 +30,8 @@ class Settings(BaseSettings):
     POSTGRES_PASSWORD: str
     POSTGRES_DB: str
 
+    FOOTBALL_DATA_API_KEY: str
+
     @computed_field  # type: ignore
     @property
     def SQLALCHEMY_DATABASE_URI(self) -> MultiHostUrl:
