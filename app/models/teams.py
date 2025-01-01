@@ -58,13 +58,15 @@ class Team(TeamBase, table=True):
     def __hash__(self):
         return hash(self.id)
 
-    @computed_field
+    @computed_field  # type: ignore[prop-decorator]
+    @property
     def leagues(self) -> list[Competition]:
         return list(
             filter(lambda c: c.type_ == CompetitionType.LEAGUE, self._competitions)
         )
 
-    @computed_field
+    @computed_field  # type: ignore[prop-decorator]
+    @property
     def cups(self) -> list[Competition]:
         return list(
             filter(lambda c: c.type_ == CompetitionType.CUP, self._competitions)
@@ -93,12 +95,12 @@ class TeamSideStats(TeamBaseStats):
     possession_avg: float
     passes_accuracy_avg: float
 
-    @computed_field
+    @computed_field  # type: ignore[prop-decorator]
     @cached_property
     def goal_per_match(self) -> float:
         return self.gf / self.mp
 
-    @computed_field
+    @computed_field  # type: ignore[prop-decorator]
     @cached_property
     def attack_efficiency(self) -> float:
         atk_for_goal_ratio = self.nb_attacks / self.gf
@@ -108,7 +110,7 @@ class TeamSideStats(TeamBaseStats):
         atk_for_goal = shot_on_goal_for_goal / atk_for_sog
         return atk_for_goal / atk_per_match * atk_for_goal_ratio
 
-    @computed_field
+    @computed_field  # type: ignore[prop-decorator]
     @cached_property
     def shot_accuracy(self) -> float:
         shot_on_goal_ratio = self.nb_shots_on_goal_total / self.nb_shots_total
@@ -146,7 +148,8 @@ class TeamSideStats(TeamBaseStats):
             / 100
         ) * 0.2
 
-    @computed_field
+    @computed_field  # type: ignore[prop-decorator]
+    @property
     def xg(self) -> float:
         possessions_weight = 1 + (self.possession_avg - 0.51)
         passes_accuracy_weight = 1 + (self.passes_accuracy_avg - 0.80)
@@ -163,6 +166,7 @@ class TeamAllStats(TeamBaseStats):
     home: TeamSideStats
     away: TeamSideStats
 
-    @computed_field
+    @computed_field  # type: ignore[prop-decorator]
+    @property
     def xg(self) -> float:
         return (self.home.xg + self.away.xg) / 2

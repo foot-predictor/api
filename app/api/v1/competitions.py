@@ -10,7 +10,7 @@ router = APIRouter()
 def leagues(session: SessionDep) -> list[Competition]:
     return (
         session.query(Competition)
-        .where(Competition.type_ == CompetitionType.LEAGUE)
+        .where(Competition.type_ == CompetitionType.LEAGUE.value)  # type: ignore
         .all()
     )
 
@@ -19,7 +19,7 @@ def leagues(session: SessionDep) -> list[Competition]:
 def cups(session: SessionDep) -> list[Competition]:
     return (
         session.query(Competition)
-        .where(Competition.type_ == CompetitionType.LEAGUE)
+        .where(Competition.type_ == CompetitionType.LEAGUE.value)  # type: ignore
         .all()
     )
 

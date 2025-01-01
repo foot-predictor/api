@@ -1,7 +1,9 @@
 import re
 from datetime import date
+from typing import Any
 
 import httpx
+import numpy as np
 import pandas as pd
 
 API_URL = "https://apiv3.apifootball.com"
@@ -21,8 +23,10 @@ class FootballStatsApiService:
     def __init__(self, api_key: str):
         self._api_key = api_key
 
-    def _request(self, action_name: str, filters: dict[str, str] | None = None):
-        params = {
+    def _request(
+        self, action_name: str, filters: dict[str, str | int] | None = None
+    ) -> Any:
+        params: dict[str, str | int] = {
             "action": action_name,
             "APIkey": self._api_key,
         }
@@ -39,32 +43,43 @@ class FootballStatsApiService:
 
         return response.json()
 
-    def _flatten_statistics(self, row: pd.Series) -> pd.Series:
-        flattened = {}
+    @staticmethod
+    def _flatten_statistics(row: pd.Series[Any]) -> pd.Series[int]:
         statistics = {}
         for stat in row["statistics"]:
-            if stat["type"] not in statistics:
-                statistics[stat["type"]] = stat
-            else:
-                if (
-                    statistics[stat["type"]]["away"] == "0"
-                    and statistics[stat["type"]]["home"] == "0"
-                ):
-                    statistics[stat["type"]] = stat
+            home_stat_key = f"home.{stat['type'].lower().replace(' ', '_')}"
+            away_stat_key = f"away.{stat['type'].lower().replace(' ', '_')}"
 
-        for stat in statistics.values():
-            flattened[f"home.{stat["type"].lower().replace(' ', '_')}"] = int(
-                re.search(r"\d+", stat["home"]).group()
-            )
-            flattened[f"away.{stat["type"].lower().replace(' ', '_')}"] = int(
-                re.search(r"\d+", stat["away"]).group()
-            )
+            if home_stat_key not in statistics:
+                result = re.search(r"\d+", stat["home"])
+                statistics[home_stat_key] = (
+                    int(result.group()) if result is not None else np.nan
+                )
+            if away_stat_key not in statistics:
+                result = re.search(r"\d+", stat["away"])
+                statistics[home_stat_key] = (
+                    int(result.group()) if result is not None else np.nan
+                )
 
-        return pd.Series(flattened)
+            if (
+                (stat["home"] != "0" or stat["away"] != "0")
+                and statistics[home_stat_key] == "0"
+                and statistics[away_stat_key] == "0"
+            ):
+                result = re.search(r"\d+", stat["home"])
+                statistics[home_stat_key] = (
+                    int(result.group()) if result is not None else np.nan
+                )
+                result = re.search(r"\d+", stat["away"])
+                statistics[home_stat_key] = (
+                    int(result.group()) if result is not None else np.nan
+                )
+
+        return pd.Series(statistics)
 
     def get_team_matches_statistics(
         self, team_id: int, from_date: date, to_date: date | None = None
-    ):
+    ) -> pd.DataFrame:
         responses = self._request(
             "get_events",
             filters={
@@ -84,9 +99,6 @@ class FootballStatsApiService:
 
         # Distribute and flatten statistics
         stats_df = df.apply(self._flatten_statistics, axis=1)
-        stats_df = stats_df.fillna(0)
         result_df = pd.concat([df.drop("statistics", axis=1), stats_df], axis=1)
 
         return result_df
-
-        # return pd.DataFrame(pd.json_normalize(responses))

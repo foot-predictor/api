@@ -6,14 +6,15 @@ import pandas as pd
 from models import MatchPredictions, Team, TeamAllStats, TeamSideStats, ThresholdGoal
 
 
+class PredictorError(Exception): ...
+
+
 class Predictor:
     MAX_GOALS = 5
 
     def __init__(self, home_team: Team, away_team: Team):
         self.home = home_team
         self.away = away_team
-        self.home_stats = None
-        self.away_stats = None
 
     @staticmethod
     def _aggregate_stats(stats: pd.DataFrame, is_home: bool) -> TeamSideStats:
@@ -84,6 +85,11 @@ class Predictor:
 
     def simulate(self, iterations=10000):
         """Use Monte Carlo simulation with poisson probability calculation"""
+        if self.home_stats is None or self.away_stats is None:
+            raise PredictorError(
+                "Team statistics not aggregated yet, please run enhance_team_statistics"
+            )
+
         home_xg, away_xg = self._adjust_xg()
         home_win = 0
         draw = 0

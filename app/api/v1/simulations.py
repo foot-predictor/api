@@ -4,7 +4,7 @@ from fastapi import APIRouter, HTTPException
 from core.dependencies import CurrentAppDep, SessionDep
 from libs.football_data_api.service import FootballDataApiService
 from libs.football_stats_api import FootballStatsApiService
-from libs.predictor.predictor import Predictor
+from libs.predictor import Predictor, PredictorError
 from models import MatchIN, MatchPredictions, Team
 
 router = APIRouter()
@@ -83,4 +83,10 @@ def simulate(
     predictor = Predictor(home_team=home_team, away_team=away_team)
     predictor.enhance_team_statistics(home_matches, away_matches)
 
-    return predictor.simulate()
+    try:
+        return predictor.simulate()
+    except PredictorError as e:
+        raise HTTPException(
+            status_code=500,
+            detail={"status": "PREDICTION_ERROR", "message": str(e)},
+        )

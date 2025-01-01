@@ -13,10 +13,11 @@ def teams(session: SessionDep) -> list[Team]:
 
 @router.post("/")
 def create_team(team: TeamCreate, session: SessionDep) -> Team:
-    session.add(Team.model_validate(team))
+    obj = Team.model_validate(team)
+    session.add(obj)
     session.commit()
-    session.refresh(team)
-    return team
+    session.refresh(obj)
+    return obj
 
 
 @router.get("/{team_id}")
