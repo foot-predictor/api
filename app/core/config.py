@@ -33,6 +33,8 @@ class Settings(BaseSettings):
     FOOTBALL_DATA_API_KEY: str
     FOOTBALL_STATS_API_KEY: str
 
+    ADMIN_PASSWORD: bytes
+
     @computed_field  # type: ignore
     @property
     def SQLALCHEMY_DATABASE_URI(self) -> MultiHostUrl:

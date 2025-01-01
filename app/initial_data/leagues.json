@@ -1,0 +1,62 @@
+[
+  {
+    "type_": "league",
+    "name": "Premier League",
+    "data_id": "PL",
+    "stats_id": 152,
+    "place_code": "eng",
+    "place_name": "England",
+    "logo_url": "https://crests.football-data.org/PL.png",
+    "start_date": "2024-08-16"
+  },
+  {
+    "type_": "league",
+    "name": "UEFA Champions League",
+    "data_id": "CL",
+    "stats_id": 3,
+    "place_code": "eur",
+    "place_name": "Europe",
+    "logo_url": "https://crests.football-data.org/CL.png",
+    "start_date": "2024-09-17"
+  },
+  {
+    "type_": "league",
+    "name": "Ligue 1",
+    "data_id": "FL1",
+    "stats_id": 168,
+    "place_code": "fra",
+    "place_name": "France",
+    "logo_url": "https://crests.football-data.org/FL1.png",
+    "start_date": "2024-08-18"
+  },
+  {
+    "type_": "league",
+    "name": "Bundesliga",
+    "data_id": "BL1",
+    "stats_id": 175,
+    "place_code": "deu",
+    "place_name": "Germany",
+    "logo_url": "https://crests.football-data.org/BL1.png",
+    "start_date": "2024-08-23"
+  },
+  {
+    "type_": "league",
+    "name": "Serie A",
+    "data_id": "SA",
+    "stats_id": 207,
+    "place_code": "ita",
+    "place_name": "Italy",
+    "logo_url": "https://crests.football-data.org/SA.png",
+    "start_date": "2024-08-18"
+  },
+  {
+    "type_": "league",
+    "name": "La Liga",
+    "data_id": "PD",
+    "stats_id": 302,
+    "place_code": "esp",
+    "place_name": "Spain",
+    "logo_url": "https://crests.football-data.org/laliga.png",
+    "start_date": "2024-08-18"
+  }
+]

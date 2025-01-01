@@ -1,0 +1,1454 @@
+[
+  {
+    "name": "Arsenal FC",
+    "short_name": "Arsenal",
+    "tag": "ARS",
+    "venue_name": "Emirates Stadium",
+    "logo_url": "https://crests.football-data.org/57.png",
+    "data_id": 57,
+    "stats_id": 141,
+    "city": "London",
+    "leagues": [
+      "PL",
+      "CL"
+    ]
+  },
+  {
+    "name": "Aston Villa FC",
+    "short_name": "Aston Villa",
+    "tag": "AVL",
+    "venue_name": "Villa Park",
+    "logo_url": "https://crests.football-data.org/58.png",
+    "data_id": 58,
+    "stats_id": 3088,
+    "city": "Birmingham",
+    "leagues": [
+      "PL",
+      "CL"
+    ]
+  },
+  {
+    "name": "Chelsea FC",
+    "short_name": "Chelsea",
+    "tag": "CHE",
+    "venue_name": "Stamford Bridge",
+    "logo_url": "https://crests.football-data.org/61.png",
+    "data_id": 61,
+    "stats_id": 88,
+    "city": "London",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Everton FC",
+    "short_name": "Everton",
+    "tag": "EVE",
+    "venue_name": "Goodison Park",
+    "logo_url": "https://crests.football-data.org/62.png",
+    "data_id": 62,
+    "stats_id": 3073,
+    "city": "Liverpool",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Fulham FC",
+    "short_name": "Fulham",
+    "tag": "FUL",
+    "venue_name": "Craven Cottage",
+    "logo_url": "https://crests.football-data.org/63.png",
+    "data_id": 63,
+    "stats_id": 3085,
+    "city": "London",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Liverpool FC",
+    "short_name": "Liverpool",
+    "tag": "LIV",
+    "venue_name": "Anfield",
+    "logo_url": "https://crests.football-data.org/64.png",
+    "data_id": 64,
+    "stats_id": 84,
+    "city": "Liverpool",
+    "leagues": [
+      "PL",
+      "CL"
+    ]
+  },
+  {
+    "name": "Manchester City FC",
+    "short_name": "Man City",
+    "tag": "MCI",
+    "venue_name": "Etihad Stadium",
+    "logo_url": "https://crests.football-data.org/65.png",
+    "data_id": 65,
+    "stats_id": 80,
+    "city": "Manchester",
+    "leagues": [
+      "PL",
+      "CL"
+    ]
+  },
+  {
+    "name": "Manchester United FC",
+    "short_name": "Man United",
+    "tag": "MUN",
+    "venue_name": "Old Trafford",
+    "logo_url": "https://crests.football-data.org/66.png",
+    "data_id": 66,
+    "stats_id": 102,
+    "city": "Manchester",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Newcastle United FC",
+    "short_name": "Newcastle",
+    "tag": "NEW",
+    "venue_name": "St. James' Park",
+    "logo_url": "https://crests.football-data.org/67.png",
+    "data_id": 67,
+    "stats_id": 3100,
+    "city": "Newcastle upon Tyne",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Tottenham Hotspur FC",
+    "short_name": "Tottenham",
+    "tag": "TOT",
+    "venue_name": "Tottenham Hotspur Stadium",
+    "logo_url": "https://crests.football-data.org/73.png",
+    "data_id": 73,
+    "stats_id": 164,
+    "city": "London",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Wolverhampton Wanderers FC",
+    "short_name": "Wolverhampton",
+    "tag": "WOL",
+    "venue_name": "Molineux Stadium",
+    "logo_url": "https://crests.football-data.org/76.png",
+    "data_id": 76,
+    "stats_id": 3077,
+    "city": "Wolverhampton, West Midlands",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Leicester City FC",
+    "short_name": "Leicester City",
+    "tag": "LEI",
+    "venue_name": "King Power Stadium",
+    "logo_url": "https://crests.football-data.org/338.png",
+    "data_id": 338,
+    "stats_id": 155,
+    "city": "Leicester, Leicestershire",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Southampton FC",
+    "short_name": "Southampton",
+    "tag": "SOU",
+    "venue_name": "St. Mary's Stadium",
+    "logo_url": "https://crests.football-data.org/340.png",
+    "data_id": 340,
+    "stats_id": 3072,
+    "city": "Southampton, Hampshire",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Ipswich Town FC",
+    "short_name": "Ipswich Town",
+    "tag": "IPS",
+    "venue_name": "Portman Road Stadium",
+    "logo_url": "https://crests.football-data.org/349.png",
+    "data_id": 349,
+    "stats_id": 3121,
+    "city": "Ipswich, Suffolk",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Nottingham Forest FC",
+    "short_name": "Nottingham",
+    "tag": "NOT",
+    "venue_name": "The City Ground",
+    "logo_url": "https://crests.football-data.org/351.png",
+    "data_id": 351,
+    "stats_id": 3089,
+    "city": "Nottingham, Nottinghamshire",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Crystal Palace FC",
+    "short_name": "Crystal Palace",
+    "tag": "CRY",
+    "venue_name": "Selhurst Park",
+    "logo_url": "https://crests.football-data.org/354.png",
+    "data_id": 354,
+    "stats_id": 3429,
+    "city": "London",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Brighton & Hove Albion FC",
+    "short_name": "Brighton Hove",
+    "tag": "BHA",
+    "venue_name": "The American Express Community Stadium",
+    "logo_url": "https://crests.football-data.org/397.png",
+    "data_id": 397,
+    "stats_id": 3079,
+    "city": "Falmer, East Sussex",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Brentford FC",
+    "short_name": "Brentford",
+    "tag": "BRE",
+    "venue_name": "Griffin Park",
+    "logo_url": "https://crests.football-data.org/402.png",
+    "data_id": 402,
+    "stats_id": 3086,
+    "city": "Brentford, Middlesex",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "West Ham United FC",
+    "short_name": "West Ham",
+    "tag": "WHU",
+    "venue_name": "London Stadium",
+    "logo_url": "https://crests.football-data.org/563.png",
+    "data_id": 563,
+    "stats_id": 3081,
+    "city": "London",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "AFC Bournemouth",
+    "short_name": "Bournemouth",
+    "tag": "BOU",
+    "venue_name": "Vitality Stadium",
+    "logo_url": "https://crests.football-data.org/bournemouth.png",
+    "data_id": 1044,
+    "stats_id": 3071,
+    "city": "Bournemouth, Dorset",
+    "leagues": [
+      "PL"
+    ]
+  },
+  {
+    "name": "Bayer 04 Leverkusen",
+    "short_name": "Leverkusen",
+    "tag": "B04",
+    "venue_name": "BayArena",
+    "logo_url": "https://crests.football-data.org/3.png",
+    "data_id": 3,
+    "stats_id": 143,
+    "city": "Leverkusen",
+    "leagues": [
+      "CL",
+      "BL1"
+    ]
+  },
+  {
+    "name": "Borussia Dortmund",
+    "short_name": "Dortmund",
+    "tag": "BVB",
+    "venue_name": "Signal Iduna Park",
+    "logo_url": "https://crests.football-data.org/4.png",
+    "data_id": 4,
+    "stats_id": 92,
+    "city": "Dortmund",
+    "leagues": [
+      "CL",
+      "BL1"
+    ]
+  },
+  {
+    "name": "FC Bayern Munich",
+    "short_name": "Bayern",
+    "tag": "FCB",
+    "venue_name": "Allianz Arena",
+    "logo_url": "https://crests.football-data.org/5.png",
+    "data_id": 5,
+    "stats_id": 72,
+    "city": "Munich",
+    "leagues": [
+      "CL",
+      "BL1"
+    ]
+  },
+  {
+    "name": "VfB Stuttgart",
+    "short_name": "Stuttgart",
+    "tag": "VFB",
+    "venue_name": "Mercedes-Benz Arena",
+    "logo_url": "https://crests.football-data.org/10.png",
+    "data_id": 10,
+    "stats_id": 3933,
+    "city": "Stuttgart",
+    "leagues": [
+      "CL",
+      "BL1"
+    ]
+  },
+  {
+    "name": "Club Atlético de Madrid",
+    "short_name": "Atletico",
+    "tag": "ATL",
+    "venue_name": "Estadio Wanda Metropolitano",
+    "logo_url": "https://crests.football-data.org/78.png",
+    "data_id": 78,
+    "stats_id": 73,
+    "city": "Madrid",
+    "leagues": [
+      "CL",
+      "PD"
+    ]
+  },
+  {
+    "name": "FC Barcelone",
+    "short_name": "Barça",
+    "tag": "FCB",
+    "venue_name": "Camp Nou",
+    "logo_url": "https://crests.football-data.org/81.png",
+    "data_id": 81,
+    "stats_id": 97,
+    "city": "Barcelone",
+    "leagues": [
+      "CL",
+      "PD"
+    ]
+  },
+  {
+    "name": "Real Madrid CF",
+    "short_name": "Real Madrid",
+    "tag": "RMA",
+    "venue_name": "Estadio Santiago Bernabéu",
+    "logo_url": "https://crests.football-data.org/86.png",
+    "data_id": 86,
+    "stats_id": 76,
+    "city": "Madrid",
+    "leagues": [
+      "CL",
+      "PD"
+    ]
+  },
+  {
+    "name": "AC Milan",
+    "short_name": "Milan",
+    "tag": "MIL",
+    "venue_name": "Stadio Giuseppe Meazza",
+    "logo_url": "https://crests.football-data.org/98.png",
+    "data_id": 98,
+    "stats_id": 159,
+    "city": "Milan",
+    "leagues": [
+      "CL",
+      "SA"
+    ]
+  },
+  {
+    "name": "Atalanta BC",
+    "short_name": "Atalanta",
+    "tag": "ATA",
+    "venue_name": "Stadio Atleti Azzurri d'Italia",
+    "logo_url": "https://crests.football-data.org/102.png",
+    "data_id": 102,
+    "stats_id": 85,
+    "city": "Bergamo",
+    "leagues": [
+      "CL",
+      "SA"
+    ]
+  },
+  {
+    "name": "Bologna FC 1909",
+    "short_name": "Bologna",
+    "tag": "BOL",
+    "venue_name": "Stadio Renato Dall'Ara",
+    "logo_url": "https://crests.football-data.org/103.png",
+    "data_id": 103,
+    "stats_id": 4983,
+    "city": "Bologne",
+    "leagues": [
+      "CL",
+      "SA"
+    ]
+  },
+  {
+    "name": "FC Inter de Milan",
+    "short_name": "Inter",
+    "tag": "INT",
+    "venue_name": "Stadio Giuseppe Meazza",
+    "logo_url": "https://crests.football-data.org/108.png",
+    "data_id": 108,
+    "stats_id": 79,
+    "city": "Milan",
+    "leagues": [
+      "CL",
+      "SA"
+    ]
+  },
+  {
+    "name": "Juventus FC",
+    "short_name": "Juventus",
+    "tag": "JUV",
+    "venue_name": "Allianz Stadium",
+    "logo_url": "https://crests.football-data.org/109.png",
+    "data_id": 109,
+    "stats_id": 96,
+    "city": "Turin",
+    "leagues": [
+      "CL",
+      "SA"
+    ]
+  },
+  {
+    "name": "Girona FC",
+    "short_name": "Girona",
+    "tag": "GIR",
+    "venue_name": "Estadi Municipal de Montilivi",
+    "logo_url": "https://crests.football-data.org/298.png",
+    "data_id": 298,
+    "stats_id": 7263,
+    "city": "Gérone",
+    "leagues": [
+      "CL",
+      "PD"
+    ]
+  },
+  {
+    "name": "Sporting Clube de Portugal",
+    "short_name": "Sporting CP",
+    "tag": "SPO",
+    "venue_name": "Estádio José Alvalade",
+    "logo_url": "https://crests.football-data.org/498.png",
+    "data_id": 498,
+    "stats_id": 177,
+    "city": "Lisbonne",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "Stade Brestois 29",
+    "short_name": "Brest",
+    "tag": "BRE",
+    "venue_name": "Stade Francis-Le Blé",
+    "logo_url": "https://crests.football-data.org/512.png",
+    "data_id": 512,
+    "stats_id": 3823,
+    "city": "Brest",
+    "leagues": [
+      "CL",
+      "FL1"
+    ]
+  },
+  {
+    "name": "Lille OSC",
+    "short_name": "Lille",
+    "tag": "LIL",
+    "venue_name": "Stade Pierre-Mauroy",
+    "logo_url": "https://crests.football-data.org/521.png",
+    "data_id": 521,
+    "stats_id": 160,
+    "city": "Lille",
+    "leagues": [
+      "CL",
+      "FL1"
+    ]
+  },
+  {
+    "name": "Paris Saint-Germain FC",
+    "short_name": "PSG",
+    "tag": "PSG",
+    "venue_name": "Parc des Princes",
+    "logo_url": "https://crests.football-data.org/524.png",
+    "data_id": 524,
+    "stats_id": 100,
+    "city": "Paris",
+    "leagues": [
+      "CL",
+      "FL1"
+    ]
+  },
+  {
+    "name": "AS Monaco FC",
+    "short_name": "Monaco",
+    "tag": "ASM",
+    "venue_name": "Stade Louis II.",
+    "logo_url": "https://crests.football-data.org/548.png",
+    "data_id": 548,
+    "stats_id": 3817,
+    "city": "Monaco",
+    "leagues": [
+      "CL",
+      "FL1"
+    ]
+  },
+  {
+    "name": "PSV",
+    "short_name": "PSV",
+    "tag": "PSV",
+    "venue_name": "Philips Stadion",
+    "logo_url": "https://crests.football-data.org/674.png",
+    "data_id": 674,
+    "stats_id": 150,
+    "city": "Eindhoven",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "Feyenoord Rotterdam",
+    "short_name": "Feyenoord",
+    "tag": "FEY",
+    "venue_name": "Stadion Feijenoord",
+    "logo_url": "https://crests.football-data.org/675.png",
+    "data_id": 675,
+    "stats_id": 168,
+    "city": "Rotterdam",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "RB Leipzig",
+    "short_name": "RB Leipzig",
+    "tag": "RBL",
+    "venue_name": "Red Bull Arena",
+    "logo_url": "https://crests.football-data.org/721.png",
+    "data_id": 721,
+    "stats_id": 101,
+    "city": "Leipzig",
+    "leagues": [
+      "CL",
+      "BL1"
+    ]
+  },
+  {
+    "name": "Celtic FC",
+    "short_name": "Celtic",
+    "tag": "CEL",
+    "venue_name": "Celtic Park",
+    "logo_url": "https://crests.football-data.org/732.png",
+    "data_id": 732,
+    "stats_id": 127,
+    "city": "Glasgow",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "GNK Dinamo Zagreb",
+    "short_name": "Dinamo Zagreb",
+    "tag": "DIN",
+    "venue_name": "Stadion Maksimir",
+    "logo_url": "https://crests.football-data.org/755.png",
+    "data_id": 755,
+    "stats_id": 121,
+    "city": "Zagreb",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "Club Brugge KV",
+    "short_name": "Club Brugge",
+    "tag": "CLU",
+    "venue_name": "Jan Breydelstadion",
+    "logo_url": "https://crests.football-data.org/851.png",
+    "data_id": 851,
+    "stats_id": 94,
+    "city": "Bruges",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "AC Sparta Prague",
+    "short_name": "Sparta Prague",
+    "tag": "SPP",
+    "venue_name": "Generali Arena",
+    "logo_url": "https://crests.football-data.org/907.png",
+    "data_id": 907,
+    "stats_id": 161,
+    "city": "Prague",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "BSC Young Boys",
+    "short_name": "Young Boys",
+    "tag": "YOB",
+    "venue_name": "Wankdorfstadion",
+    "logo_url": "https://crests.football-data.org/1871.png",
+    "data_id": 1871,
+    "stats_id": 125,
+    "city": "Berne",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "FC Red Bull Salzburg",
+    "short_name": "RB Salzburg",
+    "tag": "RBS",
+    "venue_name": "Red Bull Arena",
+    "logo_url": "https://crests.football-data.org/1877.png",
+    "data_id": 1877,
+    "stats_id": 74,
+    "city": "Salzburg",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "FK Shakhtar Donetsk",
+    "short_name": "Shaktar",
+    "tag": "SHD",
+    "venue_name": "Oblasny SportKomplex Metalist",
+    "logo_url": "https://crests.football-data.org/1887.png",
+    "data_id": 1887,
+    "stats_id": 78,
+    "city": "Kiev",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "Benfica de Lisbonne",
+    "short_name": "SL Benfica",
+    "tag": "BEN",
+    "venue_name": "Estàdio do Sport Lisboa e Benfica",
+    "logo_url": "https://crests.football-data.org/1903.png",
+    "data_id": 1903,
+    "stats_id": 147,
+    "city": "Lisbonne",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "SK Sturm Graz",
+    "short_name": "Sturm Graz",
+    "tag": "STU",
+    "venue_name": "Merkur Arena",
+    "logo_url": "https://crests.football-data.org/2021.png",
+    "data_id": 2021,
+    "stats_id": 1236,
+    "city": "Graz",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "Étoile rouge de Belgrade",
+    "short_name": "Crvena Zvedza",
+    "tag": "CRV",
+    "venue_name": "Stadion Rajko Mitić",
+    "logo_url": "https://crests.football-data.org/7283.png",
+    "data_id": 7283,
+    "stats_id": 112,
+    "city": "Belgrade",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "ŠK Slovan Bratislava",
+    "short_name": "Sl. Bratislava",
+    "tag": "SBA",
+    "venue_name": "Štadión Tehelné pole",
+    "logo_url": "https://crests.football-data.org/7509.png",
+    "data_id": 7509,
+    "stats_id": 6565,
+    "city": "Bratislava",
+    "leagues": [
+      "CL"
+    ]
+  },
+  {
+    "name": "Toulouse FC",
+    "short_name": "Toulouse",
+    "tag": "TOU",
+    "venue_name": "Stadium Municipal",
+    "logo_url": "https://crests.football-data.org/511.png",
+    "data_id": 511,
+    "stats_id": 3794,
+    "city": "Toulouse",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "Olympique de Marseille",
+    "short_name": "Marseille",
+    "tag": "MAR",
+    "venue_name": "Orange Vélodrome",
+    "logo_url": "https://crests.football-data.org/516.png",
+    "data_id": 516,
+    "stats_id": 83,
+    "city": "Marseille",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "Montpellier HSC",
+    "short_name": "Montpellier",
+    "tag": "MON",
+    "venue_name": "Stade de la Mosson",
+    "logo_url": "https://crests.football-data.org/518.png",
+    "data_id": 518,
+    "stats_id": 3819,
+    "city": "Montpellier",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "AJ Auxerre",
+    "short_name": "Auxerre",
+    "tag": "AJA",
+    "venue_name": "Stade de l'Abbé Deschamps",
+    "logo_url": "https://crests.football-data.org/519.png",
+    "data_id": 519,
+    "stats_id": 3797,
+    "city": "Auxerre",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "OGC Nice",
+    "short_name": "Nice",
+    "tag": "NIC",
+    "venue_name": "Stade de Nice",
+    "logo_url": "https://crests.football-data.org/522.png",
+    "data_id": 522,
+    "stats_id": 145,
+    "city": "Nice",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "Olympique Lyonnais",
+    "short_name": "Olympique Lyon",
+    "tag": "LYO",
+    "venue_name": "Groupama Stadium",
+    "logo_url": "https://crests.football-data.org/523.png",
+    "data_id": 523,
+    "stats_id": 3815,
+    "city": "Décines-Charpieu",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "AS Saint-Étienne",
+    "short_name": "Saint-Etienne",
+    "tag": "ASS",
+    "venue_name": "Stade Geoffroy-Guichard",
+    "logo_url": "https://crests.football-data.org/527.png",
+    "data_id": 527,
+    "stats_id": 3826,
+    "city": "Saint-Étienne",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "Stade Rennais FC 1901",
+    "short_name": "Stade Rennais",
+    "tag": "REN",
+    "venue_name": "Roazhon Park",
+    "logo_url": "https://crests.football-data.org/529.png",
+    "data_id": 529,
+    "stats_id": 91,
+    "city": "Rennes",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "Angers SCO",
+    "short_name": "Angers SCO",
+    "tag": "ANG",
+    "venue_name": "Stade Raymond Kopa",
+    "logo_url": "https://crests.football-data.org/532.png",
+    "data_id": 532,
+    "stats_id": 3827,
+    "city": "Angers",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "Le Havre AC",
+    "short_name": "Le Havre",
+    "tag": "HAC",
+    "venue_name": "Stade Océane",
+    "logo_url": "https://crests.football-data.org/533.png",
+    "data_id": 533,
+    "stats_id": 3804,
+    "city": "Le Havre",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "FC Nantes",
+    "short_name": "Nantes",
+    "tag": "NAN",
+    "venue_name": "Stade de la Beaujoire - Louis Fonteneau",
+    "logo_url": "https://crests.football-data.org/543.png",
+    "data_id": 543,
+    "stats_id": 3820,
+    "city": "Nantes",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "Racing Club de Lens",
+    "short_name": "RC Lens",
+    "tag": "RCL",
+    "venue_name": "Stade Bollaert-Delelis",
+    "logo_url": "https://crests.football-data.org/546.png",
+    "data_id": 546,
+    "stats_id": 3821,
+    "city": "Lens",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "Stade de Reims",
+    "short_name": "Stade de Reims",
+    "tag": "SDR",
+    "venue_name": "Stade Auguste-Delaune II",
+    "logo_url": "https://crests.football-data.org/547.png",
+    "data_id": 547,
+    "stats_id": 182,
+    "city": "Reims",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "RC Strasbourg Alsace",
+    "short_name": "Strasbourg",
+    "tag": "RC ",
+    "venue_name": "Stade de la Meinau",
+    "logo_url": "https://crests.football-data.org/576.png",
+    "data_id": 576,
+    "stats_id": 3818,
+    "city": "Strasbourg",
+    "leagues": [
+      "FL1"
+    ]
+  },
+  {
+    "name": "TSG 1899 Hoffenheim",
+    "short_name": "Hoffenheim",
+    "tag": "TSG",
+    "venue_name": "PreZero Arena",
+    "logo_url": "https://crests.football-data.org/2.png",
+    "data_id": 2,
+    "stats_id": 170,
+    "city": "Hoffenheim",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "VfL Wolfsburg",
+    "short_name": "Wolfsburg",
+    "tag": "WOB",
+    "venue_name": "Volkswagen Arena",
+    "logo_url": "https://crests.football-data.org/11.png",
+    "data_id": 11,
+    "stats_id": 196,
+    "city": "Wolfsburg",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "Werder Brême",
+    "short_name": "Brême",
+    "tag": "SVW",
+    "venue_name": "Weserstadion",
+    "logo_url": "https://crests.football-data.org/12.png",
+    "data_id": 12,
+    "stats_id": 3930,
+    "city": "Brême",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "1. FSV Mayence 05",
+    "short_name": "Mainz",
+    "tag": "M05",
+    "venue_name": "Opel Arena",
+    "logo_url": "https://crests.football-data.org/15.png",
+    "data_id": 15,
+    "stats_id": 3939,
+    "city": "Mayence",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "FC Augsbourg",
+    "short_name": "Augsbourg",
+    "tag": "FCA",
+    "venue_name": "WWK Arena",
+    "logo_url": "https://crests.football-data.org/16.png",
+    "data_id": 16,
+    "stats_id": 3934,
+    "city": "Augsbourg",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "SC Fribourg",
+    "short_name": "Fribourg",
+    "tag": "SCF",
+    "venue_name": "Schwarzwald-Stadion",
+    "logo_url": "https://crests.football-data.org/17.png",
+    "data_id": 17,
+    "stats_id": 3962,
+    "city": "Fribourg-en-Brisgau",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "Borussia Mönchengladbach",
+    "short_name": "Mönchengladbach",
+    "tag": "BMG",
+    "venue_name": "Stadion im Borussia-Park",
+    "logo_url": "https://crests.football-data.org/18.png",
+    "data_id": 18,
+    "stats_id": 77,
+    "city": "Mönchengladbach",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "Eintracht Francfort",
+    "short_name": "Francfort",
+    "tag": "SGE",
+    "venue_name": "Deutsche Bank Park",
+    "logo_url": "https://crests.football-data.org/19.png",
+    "data_id": 19,
+    "stats_id": 3945,
+    "city": "Francfort-sur-le-Main",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "FC St. Pauli",
+    "short_name": "St. Pauli",
+    "tag": "STP",
+    "venue_name": "Millerntor-Stadion",
+    "logo_url": "https://crests.football-data.org/20.png",
+    "data_id": 20,
+    "stats_id": 3921,
+    "city": "Hambourg",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "1. FC Union Berlin",
+    "short_name": "Union Berlin",
+    "tag": "UNB",
+    "venue_name": "Stadion An der Alten Försterei",
+    "logo_url": "https://crests.football-data.org/28.png",
+    "data_id": 28,
+    "stats_id": 3936,
+    "city": "Berlin",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "VfL Bochum",
+    "short_name": "Bochum",
+    "tag": "BOC",
+    "venue_name": "Vonovia Ruhrstadion",
+    "logo_url": "https://crests.football-data.org/36.png",
+    "data_id": 36,
+    "stats_id": 3911,
+    "city": "Bochum",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "1. FC Heidenheim 1846",
+    "short_name": "Heidenheim",
+    "tag": "HEI",
+    "venue_name": "Voith-Arena",
+    "logo_url": "https://crests.football-data.org/44.png",
+    "data_id": 44,
+    "stats_id": 3917,
+    "city": "Heidenheim an der Brenz",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "Kieler SV Holstein",
+    "short_name": "Holstein Kiel",
+    "tag": "KSV",
+    "venue_name": "Holstein-Stadion",
+    "logo_url": "https://crests.football-data.org/720.png",
+    "data_id": 720,
+    "stats_id": 3914,
+    "city": "Kiel",
+    "leagues": [
+      "BL1"
+    ]
+  },
+  {
+    "name": "ACF Fiorentina",
+    "short_name": "Fiorentina",
+    "tag": "FIO",
+    "venue_name": "Stadio Artemio Franchi",
+    "logo_url": "https://crests.football-data.org/99.png",
+    "data_id": 99,
+    "stats_id": 4974,
+    "city": "Florence",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "AS Roma",
+    "short_name": "Roma",
+    "tag": "ROM",
+    "venue_name": "Stadio Olimpico",
+    "logo_url": "https://crests.football-data.org/100.png",
+    "data_id": 100,
+    "stats_id": 139,
+    "city": "Rome",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Cagliari Calcio",
+    "short_name": "Cagliari",
+    "tag": "CAG",
+    "venue_name": "Sardegna Arena",
+    "logo_url": "https://crests.football-data.org/104.png",
+    "data_id": 104,
+    "stats_id": 4981,
+    "city": "Cagliari",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Genoa CFC",
+    "short_name": "Genoa",
+    "tag": "GEN",
+    "venue_name": "Stadio Comunale Luigi Ferraris",
+    "logo_url": "https://crests.football-data.org/107.png",
+    "data_id": 107,
+    "stats_id": 4986,
+    "city": "Gênes",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "SS Lazio",
+    "short_name": "Lazio",
+    "tag": "LAZ",
+    "venue_name": "Stadio Olimpico",
+    "logo_url": "https://crests.football-data.org/110.png",
+    "data_id": 110,
+    "stats_id": 93,
+    "city": "Rome",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Parme Calcio 1913",
+    "short_name": "Parme",
+    "tag": "PAR",
+    "venue_name": "Stadio Ennio Tardini",
+    "logo_url": "https://crests.football-data.org/112.png",
+    "data_id": 112,
+    "stats_id": 4978,
+    "city": "Parme",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "SSC Napoli",
+    "short_name": "Naples",
+    "tag": "NAP",
+    "venue_name": "Stadio San Paolo",
+    "logo_url": "https://crests.football-data.org/113.png",
+    "data_id": 113,
+    "stats_id": 152,
+    "city": "Naples",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Udinese Calcio",
+    "short_name": "Udinese",
+    "tag": "UDI",
+    "venue_name": "Dacia Arena",
+    "logo_url": "https://crests.football-data.org/115.png",
+    "data_id": 115,
+    "stats_id": 4984,
+    "city": "Udine",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Empoli FC",
+    "short_name": "Empoli",
+    "tag": "EMP",
+    "venue_name": "Stadio Carlo Castellani",
+    "logo_url": "https://crests.football-data.org/445.png",
+    "data_id": 445,
+    "stats_id": 4979,
+    "city": "Empoli",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Hellas Vérone FC",
+    "short_name": "Vérone",
+    "tag": "HVE",
+    "venue_name": "Stadio Marc'Antonio Bentegodi",
+    "logo_url": "https://crests.football-data.org/450.png",
+    "data_id": 450,
+    "stats_id": 4982,
+    "city": "Vérone",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Venezia FC",
+    "short_name": "Venezia FC",
+    "tag": "VEN",
+    "venue_name": "Stadio Pierluigi Penzo",
+    "logo_url": "https://crests.football-data.org/454.png",
+    "data_id": 454,
+    "stats_id": 5007,
+    "city": "Venise",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Torino FC",
+    "short_name": "Torino",
+    "tag": "TOR",
+    "venue_name": "Stadio Olimpico di Torino",
+    "logo_url": "https://crests.football-data.org/586.png",
+    "data_id": 586,
+    "stats_id": 4973,
+    "city": "Turin",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "US Lecce",
+    "short_name": "Lecce",
+    "tag": "USL",
+    "venue_name": "Stadio Comunale Via Del Mare",
+    "logo_url": "https://crests.football-data.org/5890.png",
+    "data_id": 5890,
+    "stats_id": 5010,
+    "city": "Lecce",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "AC Monza",
+    "short_name": "Monza",
+    "tag": "MON",
+    "venue_name": "Stadio Comunale Brianteo",
+    "logo_url": "https://crests.football-data.org/5911.png",
+    "data_id": 5911,
+    "stats_id": 4990,
+    "city": "Monza",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Como 1907",
+    "short_name": "Côme",
+    "tag": "COM",
+    "venue_name": "Stadio Giuseppe Sinigaglia",
+    "logo_url": "https://crests.football-data.org/7397.png",
+    "data_id": 7397,
+    "stats_id": 8239,
+    "city": "Côme",
+    "leagues": [
+      "SA"
+    ]
+  },
+  {
+    "name": "Athletic Club",
+    "short_name": "Ath. Bilbao",
+    "tag": "ATH",
+    "venue_name": "San Mamés",
+    "logo_url": "https://crests.football-data.org/77.png",
+    "data_id": 77,
+    "stats_id": 7258,
+    "city": "Bilbao",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "CA Osasuna",
+    "short_name": "Osasuna",
+    "tag": "OSA",
+    "venue_name": "Estadio El Sadar",
+    "logo_url": "https://crests.football-data.org/79.png",
+    "data_id": 79,
+    "stats_id": 7269,
+    "city": "Pampelune",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "RCD Espanyol de Barcelona",
+    "short_name": "Espanyol",
+    "tag": "ESP",
+    "venue_name": "RCDE Stadium",
+    "logo_url": "https://crests.football-data.org/80.png",
+    "data_id": 80,
+    "stats_id": 7268,
+    "city": "Barcelone",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "Getafe CF",
+    "short_name": "Getafe",
+    "tag": "GET",
+    "venue_name": "Coliseum Alfonso Pérez",
+    "logo_url": "https://crests.football-data.org/82.png",
+    "data_id": 82,
+    "stats_id": 7288,
+    "city": "Getafe",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "Rayo Vallecano de Madrid",
+    "short_name": "Rayo Vallecano",
+    "tag": "RAY",
+    "venue_name": "Estadio del Rayo Vallecano",
+    "logo_url": "https://crests.football-data.org/87.png",
+    "data_id": 87,
+    "stats_id": 7264,
+    "city": "Puente de Vallecas",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "RCD Majorque",
+    "short_name": "Majorque",
+    "tag": "MAL",
+    "venue_name": "Iberostar Estadi",
+    "logo_url": "https://crests.football-data.org/89.png",
+    "data_id": 89,
+    "stats_id": 7285,
+    "city": "Majorque",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "Real Betis Balompié",
+    "short_name": "Real Betis",
+    "tag": "BET",
+    "venue_name": "Estadio Benito Villamarín",
+    "logo_url": "https://crests.football-data.org/90.png",
+    "data_id": 90,
+    "stats_id": 7261,
+    "city": "Séville",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "Real Sociedad de Fútbol",
+    "short_name": "Real Sociedad",
+    "tag": "RSO",
+    "venue_name": "Estadio Municipal de Anoeta",
+    "logo_url": "https://crests.football-data.org/92.png",
+    "data_id": 92,
+    "stats_id": 153,
+    "city": "Saint-Sébastien",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "Villarreal CF",
+    "short_name": "Villarreal",
+    "tag": "VIL",
+    "venue_name": "Estadio de la Cerámica",
+    "logo_url": "https://crests.football-data.org/94.png",
+    "data_id": 94,
+    "stats_id": 162,
+    "city": "Villarreal",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "Valencia CF",
+    "short_name": "Valence",
+    "tag": "VAL",
+    "venue_name": "Estadio de Mestalla",
+    "logo_url": "https://crests.football-data.org/95.png",
+    "data_id": 95,
+    "stats_id": 7272,
+    "city": "Valence",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "Real Valladolid CF",
+    "short_name": "Valladolid",
+    "tag": "VDD",
+    "venue_name": "Estadio Municipal José Zorrilla",
+    "logo_url": "https://crests.football-data.org/250.png",
+    "data_id": 250,
+    "stats_id": 7262,
+    "city": "Valladolid",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "Deportivo Alavés",
+    "short_name": "Alavés",
+    "tag": "ALA",
+    "venue_name": "Estadio de Mendizorroza",
+    "logo_url": "https://crests.football-data.org/263.png",
+    "data_id": 263,
+    "stats_id": 7275,
+    "city": "Vitoria-Gasteiz",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "UD Las Palmas",
+    "short_name": "Las Palmas",
+    "tag": "LPA",
+    "venue_name": "Estadio de Gran Canaria",
+    "logo_url": "https://crests.football-data.org/275.png",
+    "data_id": 275,
+    "stats_id": 7289,
+    "city": "Las Palmas de Gran Canaria",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "RC Celta de Vigo",
+    "short_name": "Celta",
+    "tag": "CEL",
+    "venue_name": "Estadio de Balaídos",
+    "logo_url": "https://crests.football-data.org/558.png",
+    "data_id": 558,
+    "stats_id": 7290,
+    "city": "Vigo",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "Sevilla FC",
+    "short_name": "Séville FC",
+    "tag": "SEV",
+    "venue_name": "Estadio Ramón Sánchez Pizjuán",
+    "logo_url": "https://crests.football-data.org/559.png",
+    "data_id": 559,
+    "stats_id": 89,
+    "city": "Séville",
+    "leagues": [
+      "PD"
+    ]
+  },
+  {
+    "name": "CD Leganés",
+    "short_name": "Leganés",
+    "tag": "LEG",
+    "venue_name": "Estadio Municipal de Butarque",
+    "logo_url": "https://crests.football-data.org/745.png",
+    "data_id": 745,
+    "stats_id": 7266,
+    "city": "Leganés",
+    "leagues": [
+      "PD"
+    ]
+  }
+]
