@@ -41,7 +41,6 @@ omit = [
 ]
 
 [tool.mypy]
-ignore_missing_imports = true
 strict = true
 exclude = ["alembic"]
 plugins = [
