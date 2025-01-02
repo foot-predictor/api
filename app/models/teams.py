@@ -129,7 +129,7 @@ class TeamSideStats(TeamBaseStats):
                 * self.attack_efficiency
             )
             / 100
-        ) * 0.2
+        ) * 0.4
 
     @cached_property
     def _xg_per_shot(self) -> float:
@@ -145,19 +145,19 @@ class TeamSideStats(TeamBaseStats):
                 )
             )
             / 100
-        ) * 0.2
+        ) * 0.4
 
     @computed_field  # type: ignore[prop-decorator]
     @property
     def xg(self) -> float:
-        possessions_weight = 1 + (self.possession_avg - 0.51)
+        possessions_weight = 1 + (self.possession_avg - 0.50)
         passes_accuracy_weight = 1 + (self.passes_accuracy_avg - 0.80)
 
         combined_xgs = (
             self._xg_per_attack * possessions_weight * passes_accuracy_weight
         ) / self._xg_per_shot
 
-        return self.goal_per_match * (0.6 + math.log10(combined_xgs))
+        return self.goal_per_match * (0.75 + math.log10(combined_xgs))
 
 
 class TeamAllStats(TeamBaseStats):

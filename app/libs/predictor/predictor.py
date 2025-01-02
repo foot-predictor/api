@@ -77,14 +77,16 @@ class Predictor:
     def _adjust_xg(self) -> tuple[float, float]:
         home_win_rate = self.home_stats.wins / self.home_stats.mp
         away_win_rate = self.away_stats.wins / self.away_stats.mp
-        advantage = (home_win_rate - away_win_rate) / (home_win_rate + away_win_rate)
+        advantage = (
+            (home_win_rate - away_win_rate) / (home_win_rate + away_win_rate) * 0.5
+        )
 
-        home_xg = (self.home_stats.xg * 0.4 + self.home_stats.home.xg * 0.6) * (
+        home_xg = (self.home_stats.xg * 0.2 + self.home_stats.home.xg * 0.8) * (
             1 + advantage
         )
 
-        away_xg = (self.away_stats.xg * 0.4 + self.away_stats.away.xg * 0.6) * (
-            1 - advantage
+        away_xg = (self.away_stats.xg * 0.2 + self.away_stats.away.xg * 0.8) * (
+            0.9 - advantage
         )
         return home_xg, away_xg
 
