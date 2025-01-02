@@ -1,3 +1,5 @@
+import logging
+
 import pandas as pd
 from fastapi import APIRouter, HTTPException
 
@@ -6,6 +8,8 @@ from libs.football_data_api.service import FootballDataApiService
 from libs.football_stats_api import FootballStatsApiService
 from libs.predictor import Predictor, PredictorError
 from models import MatchIN, MatchPredictions, Team
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter()
 
@@ -50,11 +54,19 @@ def simulate(
             *[league.start_date for league in common_leagues],
         ]
     )
+    logger.info(
+        f"Getting matches for teams [{home_team.short_name}] and [{away_team.short_name}] "
+        f"for season [{start_date.year}]"
+    )
     home_matches, home_team_result = data_api_service.get_team_matches(
         home_team.data_id, season=start_date.year
     )
     away_matches, away_team_result = data_api_service.get_team_matches(
         away_team.data_id, season=start_date.year
+    )
+    logger.info(
+        f"Getting statistics for teams [{home_team.short_name}] and [{away_team.short_name}] "
+        f"since [{start_date.strftime('%Y-%m-%d')}]"
     )
     home_stats = stats_api_service.get_team_matches_statistics(
         home_team.stats_id,
@@ -80,12 +92,17 @@ def simulate(
         how="inner",
     )
 
+    logger.info(
+        f"Found [{home_matches.shape[0]}] matches for team [{home_team.short_name}] "
+        f"and [{away_matches.shape[0]}] matches for team [{away_team.short_name}]"
+    )
     predictor = Predictor(home_team=home_team, away_team=away_team)
     predictor.enhance_team_statistics(home_matches, away_matches)
 
     try:
         return predictor.simulate()
     except PredictorError as e:
+        logger.error(f"Error during prediction: {str(e)}")
         raise HTTPException(
             status_code=500,
             detail={"status": "PREDICTION_ERROR", "message": str(e)},

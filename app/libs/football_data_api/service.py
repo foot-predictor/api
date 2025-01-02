@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime
 from typing import Literal
 
@@ -16,6 +17,8 @@ LeagueType = Literal[
     "WC",  # World Cup
 ]
 
+logger = logging.getLogger(__name__)
+
 
 class FootballDataApiService:
     def __init__(self, api_key: str):
@@ -27,6 +30,7 @@ class FootballDataApiService:
             headers={"X-Auth-Token": self._api_key},
         )
         if response.status_code != 200:
+            logger.error(f"Request failed [{response.status_code}] : {response.json()}")
             raise Exception(
                 f"Request failed [{response.status_code}] : {response.json()}"
             )
@@ -54,6 +58,7 @@ class FootballDataApiService:
     def get_team_matches(
         self, team_id: int, season: int
     ) -> tuple[pd.DataFrame, dict[str, str | int]]:
+        logger.info(f"Getting matches for team [{team_id}] for season [{season}]")
         response = self._requests(
             f"teams/{team_id}/matches?season={season}&status=FINISHED",
         )

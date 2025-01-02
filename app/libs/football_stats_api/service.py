@@ -1,3 +1,4 @@
+import logging
 import re
 from datetime import date
 from typing import Any
@@ -5,6 +6,8 @@ from typing import Any
 import httpx
 import numpy as np
 import pandas as pd
+
+logger = logging.getLogger(__name__)
 
 API_URL = "https://apiv3.apifootball.com"
 LEAGUES_IDS = {
@@ -37,6 +40,7 @@ class FootballStatsApiService:
             f"{API_URL}/?{"&".join(f"{key}={value}" for key, value in params.items())}"
         )
         if response.status_code != 200:
+            logger.error(f"Request failed [{response.status_code}] : {response.json()}")
             raise Exception(
                 f"Request failed [{response.status_code}] : {response.json()}"
             )
@@ -80,6 +84,7 @@ class FootballStatsApiService:
     def get_team_matches_statistics(
         self, team_id: int, from_date: date, to_date: date | None = None
     ) -> pd.DataFrame:
+        logger.info(f"Getting statistics for team [{team_id}]")
         responses = self._request(
             "get_events",
             filters={

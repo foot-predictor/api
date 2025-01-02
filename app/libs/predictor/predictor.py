@@ -1,9 +1,12 @@
+import logging
 from collections import Counter
 
 import numpy as np
 import pandas as pd
 
 from models import MatchPredictions, Team, TeamAllStats, TeamSideStats, ThresholdGoal
+
+logger = logging.getLogger(__name__)
 
 
 class PredictorError(Exception): ...
@@ -66,7 +69,9 @@ class Predictor:
     def enhance_team_statistics(
         self, home_matches: pd.DataFrame, away_matches: pd.DataFrame
     ):
+        logger.info(f"Aggregating team matches statistics for [{self.home.short_name}]")
         self.home_stats = self._transform_data(self.home, home_matches)
+        logger.info(f"Aggregating team matches statistics for [{self.away.short_name}]")
         self.away_stats = self._transform_data(self.away, away_matches)
 
     def _adjust_xg(self) -> tuple[float, float]:
@@ -91,6 +96,9 @@ class Predictor:
             )
 
         home_xg, away_xg = self._adjust_xg()
+        logging.info(
+            f"Simulating for {self.home.short_name}({home_xg}) vs {self.away.short_name}({away_xg})"
+        )
         home_win = 0
         draw = 0
         away_win = 0
