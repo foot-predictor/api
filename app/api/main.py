@@ -4,16 +4,17 @@ import os
 from typing import Annotated
 
 import pandas as pd
+from fastapi import APIRouter, HTTPException, Query
+from sqlalchemy import delete, text
+from sqlalchemy.exc import OperationalError
+from sqlmodel import select
+
 from alembic.config import Config
 from alembic.script import ScriptDirectory
 from core.base_model import ActionMessage, ServerStatus
 from core.dependencies import CurrentAppDep, SessionDep
 from core.security import Password, verify_password
-from fastapi import APIRouter, HTTPException, Query
-from models import Competition, CompetitionType, Team
-from sqlalchemy import delete, text
-from sqlalchemy.exc import OperationalError
-from sqlmodel import select
+from models import Competition, CompetitionType, MatchStatistics, Team
 
 logger = logging.getLogger(__name__)
 
@@ -94,13 +95,23 @@ def initialize(
         leagues[league["data_id"]] = Competition(type_=type_league, **league)  # type: ignore
 
     logger.info(f"Adding {len(leagues)} leagues.")
-    teams = [
-        {**data, "_competitions": [leagues[data_id] for data_id in data.pop("leagues")]}
-        for data in teams_df.to_dict(orient="records")
-    ]
+    teams = []
+    matches = []
+    for data in teams_df.to_dict(orient="records"):
+        leagues_id = data.pop("leagues")
+        match_list = data.pop("matchs")
+        team = Team(**data)
+        team._competitions = [leagues[league_id] for league_id in leagues_id]
+
+        teams.append(team)
+        matches.extend(
+            [MatchStatistics(team=team, **match_data) for match_data in match_list]
+        )
 
     logger.info(f"Adding {len(teams)} teams.")
-    session.add_all([Team(**team) for team in teams])  # type: ignore
+    session.add_all(teams)  # type: ignore
+    logger.info(f"Adding {len(matches)} matches.")
+    session.add_all(matches)  # type: ignore
     session.commit()
 
     return ActionMessage(
