@@ -1,6 +1,7 @@
 from sqlmodel import SQLModel
 
 from models.competitions import Competition, CompetitionTeamLink, CompetitionType
+from models.matchs import MatchStatistics, MatchStatus
 from models.predictions import PredictionIN, Predictions, ThresholdGoal
 from models.teams import Team, TeamAllStats, TeamCreate, TeamSideStats, TeamUpdate
 
@@ -17,4 +18,6 @@ __all__ = [
     "PredictionIN",
     "Predictions",
     "ThresholdGoal",
+    "MatchStatistics",
+    "MatchStatus",
 ]
