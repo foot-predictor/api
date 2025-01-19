@@ -52,6 +52,7 @@ class Team(TeamBase, table=True):
             "passive_deletes": True,
         },
     )
+    matches: list["MatchStatistics"] = Relationship(back_populates="team")
 
     def __eq__(self, other):
         return self.id == other.id
@@ -171,3 +172,8 @@ class TeamAllStats(TeamBaseStats):
     @property
     def xg(self) -> float:
         return (self.home.xg + self.away.xg) / 2
+
+
+from models.matchs import MatchStatistics
+
+Team.model_rebuild()
