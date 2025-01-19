@@ -15,7 +15,8 @@ class TeamBase(SQLModel):
     venue_name: str
     logo_url: str
     data_id: int
-    stats_id: int
+    livescore_id: int
+    transfermarkt_id: int
 
 
 class TeamCreate(SQLModel):
@@ -40,7 +41,8 @@ class Team(TeamBase, table=True):
     id: int | None = Field(default=None, primary_key=True)
     name: str = Field(unique=True)
     data_id: int = Field(unique=True)
-    stats_id: int = Field(unique=True)
+    livescore_id: int = Field(unique=True, nullable=True)
+    transfermarkt_id: int = Field(unique=True, nullable=True)
 
     # Defining relationships for leagues and cups
     _competitions: list[Competition] = Relationship(

@@ -39,7 +39,8 @@ class Competition(SQLModel, table=True):
     place_name: str
     logo_url: str | None = None
     data_id: str = Field(unique=True)
-    stats_id: int = Field(unique=True)
+    livescore_id: int = Field(unique=True, nullable=True)
+    transfermarkt_id: str = Field(unique=True, nullable=True)
     start_date: date = Field(nullable=True, default=None)
 
     teams: list["Team"] = Relationship(
