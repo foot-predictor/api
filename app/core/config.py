@@ -31,6 +31,9 @@ class Settings(BaseSettings):
     POSTGRES_DB: str
 
     FOOTBALL_DATA_API_KEY: str
+    RAPIDAPI_KEY: str
+    LIVESCORE_API_HOST: str
+    TRANSFERMARKT_API_HOST: str
 
     ADMIN_PASSWORD: bytes
 
