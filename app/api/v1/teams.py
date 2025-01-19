@@ -1,5 +1,6 @@
-from core.dependencies import SessionDep
 from fastapi import APIRouter
+
+from core.dependencies import SessionDep
 from models import Team
 
 router = APIRouter()
