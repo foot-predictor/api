@@ -1,13 +1,11 @@
 import logging
 
-import pandas as pd
 from fastapi import APIRouter, HTTPException
 
 from core.dependencies import CurrentAppDep, SessionDep
 from libs.football_data_api.service import FootballDataApiService
-from libs.football_stats_api import FootballStatsApiService
 from libs.predictor import Predictor, PredictorError
-from models import MatchIN, MatchPredictions, Team
+from models import PredictionIN, Predictions, Team
 
 logger = logging.getLogger(__name__)
 
@@ -16,8 +14,8 @@ router = APIRouter()
 
 @router.post("/")
 def simulate(
-    match: MatchIN, session: SessionDep, current_app: CurrentAppDep
-) -> MatchPredictions:
+    match: PredictionIN, session: SessionDep, current_app: CurrentAppDep
+) -> Predictions:
     home_team = session.get(Team, match.home_team)
     away_team = session.get(Team, match.away_team)
 

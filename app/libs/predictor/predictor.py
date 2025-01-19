@@ -4,7 +4,7 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 
-from models import MatchPredictions, Team, TeamAllStats, TeamSideStats, ThresholdGoal
+from models import Predictions, Team, TeamAllStats, TeamSideStats, ThresholdGoal
 
 logger = logging.getLogger(__name__)
 
@@ -158,7 +158,7 @@ class Predictor:
             # Track exact score
             exact_scores.append((home_goals, away_goals))
 
-        return MatchPredictions(
+        return Predictions(
             home_team=self.home_stats,
             away_team=self.away_stats,
             home_win=round((home_win / iterations) * 100),

@@ -3,7 +3,7 @@ from sqlmodel import SQLModel
 from models.teams import TeamAllStats
 
 
-class MatchIN(SQLModel):
+class PredictionIN(SQLModel):
     home_team: int
     away_team: int
 
@@ -14,7 +14,7 @@ class ThresholdGoal(SQLModel):
     over: int
 
 
-class MatchPredictions(SQLModel):
+class Predictions(SQLModel):
     home_team: TeamAllStats
     away_team: TeamAllStats
 
