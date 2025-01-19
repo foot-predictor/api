@@ -4,16 +4,16 @@ import os
 from typing import Annotated
 
 import pandas as pd
+from alembic.config import Config
+from alembic.script import ScriptDirectory
+from core.base_model import ActionMessage, ServerStatus
+from core.dependencies import CurrentAppDep, SessionDep
+from core.security import Password, verify_password
 from fastapi import APIRouter, HTTPException, Query
+from models import Competition, CompetitionType, Team
 from sqlalchemy import delete, text
 from sqlalchemy.exc import OperationalError
 from sqlmodel import select
-
-from alembic.config import Config
-from alembic.script import ScriptDirectory
-from core.dependencies import CurrentAppDep, SessionDep
-from core.security import Password, verify_password
-from models import Competition, CompetitionType, Team
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +21,7 @@ router = APIRouter()
 
 
 @router.get("/healthcheck")
-def healthcheck(session: SessionDep, current_app: CurrentAppDep) -> dict[str, str]:
+def healthcheck(session: SessionDep, current_app: CurrentAppDep) -> ServerStatus:
     try:
         logger.info("Getting database revisions, to check database is available")
         revisions = session.exec(text("SELECT version_num FROM alembic_version")).all()  # type: ignore
@@ -50,7 +50,7 @@ def healthcheck(session: SessionDep, current_app: CurrentAppDep) -> dict[str, st
             },
         )
 
-    return {"status": "OK"}
+    return ServerStatus(status="OK")
 
 
 @router.post("/initialize")
@@ -59,7 +59,7 @@ def initialize(
     session: SessionDep,
     current_app: CurrentAppDep,
     force_clean: Annotated[bool, Query()] = False,
-) -> dict[str, str]:
+) -> ActionMessage:
     logger.info("Verifying admin password")
     if not verify_password(
         password.password, base64.b64decode(current_app.state.config.ADMIN_PASSWORD)
@@ -75,10 +75,10 @@ def initialize(
         session.exec(select(Competition).limit(1)).first() is not None  # type: ignore
         or session.exec(select(Competition).limit(1)).first() is not None  # type: ignore
     ) and not force_clean:
-        return {
-            "status": "NOTHING_DONE",
-            "message": "Database is already initialized.",
-        }
+        return ActionMessage(
+            status="NOTHING_DONE",
+            message="Database is already initialized.",
+        )
 
     if force_clean:
         logger.info("Force cleaning database")
@@ -103,7 +103,7 @@ def initialize(
     session.add_all([Team(**team) for team in teams])  # type: ignore
     session.commit()
 
-    return {
-        "status": "OK",
-        "message": "Database is successfully initialized.",
-    }
+    return ActionMessage(
+        status="OK",
+        message="Database is successfully initialized.",
+    )
