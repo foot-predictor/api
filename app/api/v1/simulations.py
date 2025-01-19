@@ -44,9 +44,6 @@ def simulate(
     data_api_service = FootballDataApiService(
         current_app.state.config.FOOTBALL_DATA_API_KEY
     )
-    stats_api_service = FootballStatsApiService(
-        current_app.state.config.FOOTBALL_STATS_API_KEY
-    )
 
     start_date = min(
         [
@@ -67,29 +64,6 @@ def simulate(
     logger.info(
         f"Getting statistics for teams [{home_team.short_name}] and [{away_team.short_name}] "
         f"since [{start_date.strftime('%Y-%m-%d')}]"
-    )
-    home_stats = stats_api_service.get_team_matches_statistics(
-        home_team.stats_id,
-        start_date,
-    )
-    away_stats = stats_api_service.get_team_matches_statistics(
-        away_team.stats_id,
-        start_date,
-    )
-
-    home_matches = pd.merge(
-        home_matches,
-        home_stats,
-        left_on="matchday",
-        right_on="match_round",
-        how="inner",
-    )
-    away_matches = pd.merge(
-        away_matches,
-        away_stats,
-        left_on="matchday",
-        right_on="match_round",
-        how="inner",
     )
 
     logger.info(

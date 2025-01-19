@@ -31,7 +31,6 @@ class Settings(BaseSettings):
     POSTGRES_DB: str
 
     FOOTBALL_DATA_API_KEY: str
-    FOOTBALL_STATS_API_KEY: str
 
     ADMIN_PASSWORD: bytes
 
