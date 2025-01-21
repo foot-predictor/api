@@ -5,11 +5,11 @@ from typing import Annotated
 
 import pandas as pd
 from fastapi import Depends, FastAPI
-
-from core.dependencies.base import get_current_app
 from libs.football_data_api import FootballDataApiService
 from libs.livescore_api import LiveScoreApiService
 from models import MatchResult, MatchSide, MatchStatistics, MatchStatus, Team
+
+from core.dependencies.base import get_current_app
 
 logger = logging.getLogger(__name__)
 

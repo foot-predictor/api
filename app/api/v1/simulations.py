@@ -1,9 +1,8 @@
 import logging
 
 import pandas as pd
-from fastapi import APIRouter, HTTPException
-
 from core.dependencies import MatchExtractorDep, SessionDep
+from fastapi import APIRouter, HTTPException
 from models import PredictionIN, ResultPredictions, Team
 from predictor import Predictor, PredictorError
 

@@ -3,10 +3,9 @@ from contextlib import asynccontextmanager
 from logging.config import dictConfig
 
 import yaml
-from fastapi import FastAPI
-
 from api import main, v1
 from core.config import settings
+from fastapi import FastAPI
 
 
 @asynccontextmanager

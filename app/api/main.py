@@ -4,17 +4,16 @@ import os
 from typing import Annotated
 
 import pandas as pd
-from fastapi import APIRouter, HTTPException, Query
-from sqlalchemy import delete, text
-from sqlalchemy.exc import OperationalError
-from sqlmodel import select
-
 from alembic.config import Config
 from alembic.script import ScriptDirectory
 from core.base_model import ActionMessage, ServerStatus
 from core.dependencies import CurrentAppDep, SessionDep
 from core.security import Password, verify_password
+from fastapi import APIRouter, HTTPException, Query
 from models import Competition, CompetitionType, MatchStatistics, Team
+from sqlalchemy import delete, text
+from sqlalchemy.exc import OperationalError
+from sqlmodel import select
 
 logger = logging.getLogger(__name__)
 

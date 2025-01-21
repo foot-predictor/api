@@ -3,9 +3,9 @@ from collections import Counter
 
 import numpy as np
 import pandas as pd
-
 from models.matchs import MatchResult, MatchSide
 from models.teams import Team
+
 from predictor.models import GlobalStatistics, Prediction, TeamStatistics, ThresholdGoal
 
 logger = logging.getLogger(__name__)

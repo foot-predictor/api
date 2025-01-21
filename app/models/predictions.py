@@ -1,7 +1,7 @@
+from predictor.models import GlobalStatistics, Prediction
 from sqlmodel import SQLModel
 
 from models.teams import Team
-from predictor.models import GlobalStatistics, Prediction
 
 
 class PredictionIN(SQLModel):
