@@ -8,8 +8,20 @@ from models.teams import Team
 
 
 class MatchStatus(enum.IntEnum):
-    NOT_STARTED = 0
-    FINISHED = 1
+    NO_DATA = 0
+    NOT_STARTED = 1
+    FINISHED = 2
+
+
+class MatchSide(enum.IntEnum):
+    HOME = 1
+    AWAY = 2
+
+
+class MatchResult(enum.IntEnum):
+    LOSE = 0
+    DRAW = 1
+    WIN = 2
 
 
 class MatchStatistics(SQLModel, table=True):
@@ -18,10 +30,17 @@ class MatchStatistics(SQLModel, table=True):
     data_id: int | None
     livescore_id: int | None
     transfermarkt_id: int | None
-    status: MatchStatus = Field(
-        sa_column=Column(Enum(MatchStatus)), default=MatchStatus.NOT_STARTED
-    )
     date: datetime.datetime
+
+    status: MatchStatus = Field(
+        sa_column=Column(Enum(MatchStatus)), default=MatchStatus.NO_DATA
+    )
+    side: MatchSide | None = Field(
+        sa_column=Column(Enum(MatchSide), nullable=True), default=None
+    )
+    result: MatchResult | None = Field(
+        sa_column=Column(Enum(MatchResult), nullable=True), default=None
+    )
 
     goal_for: int | None
     goal_against: int | None
@@ -29,7 +48,6 @@ class MatchStatistics(SQLModel, table=True):
     shots: int | None
     shots_off_goal: int | None
     shots_on_goal: int | None
-    attacks: int | None
     possession: int | None
 
     livescore_xg: float | None
