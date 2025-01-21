@@ -1,11 +1,11 @@
 import logging
 
+import pandas as pd
 from fastapi import APIRouter, HTTPException
 
-from core.dependencies import CurrentAppDep, SessionDep
-from libs.football_data_api.service import FootballDataApiService
-from libs.predictor import Predictor, PredictorError
-from models import PredictionIN, Predictions, Team
+from core.dependencies import MatchExtractorDep, SessionDep
+from models import PredictionIN, ResultPredictions, Team
+from predictor import Predictor, PredictorError
 
 logger = logging.getLogger(__name__)
 
@@ -14,8 +14,8 @@ router = APIRouter()
 
 @router.post("/")
 def simulate(
-    match: PredictionIN, session: SessionDep, current_app: CurrentAppDep
-) -> Predictions:
+    match: PredictionIN, session: SessionDep, matches_extractor: MatchExtractorDep
+) -> ResultPredictions:
     home_team = session.get(Team, match.home_team)
     away_team = session.get(Team, match.away_team)
 
@@ -27,52 +27,51 @@ def simulate(
                 "message": f"Team {match.home_team if match.home_team is None else match.away_team} not found.",
             },
         )
-
-    common_leagues = set(home_team.leagues) & set(away_team.leagues)
-    common_cups = set(home_team.cups) & set(away_team.cups)
-    if not common_leagues and not common_cups:
+    try:
+        predictor = Predictor(home_team=home_team, away_team=away_team)
+    except AssertionError:
         raise HTTPException(
             status_code=400,
             detail={
-                "status": "MATCH_NOT_POSSIBLE",
-                "message": "Both teams haven't got 1 league or cup in common.",
+                "status": "MATCH_IMPOSSIBLE",
+                "message": "The 2 teams are not in a common league or cup.",
             },
         )
+    logger.info("Extract team matches")
+    home_matches, away_matches = matches_extractor.get_match_data(
+        home_team=home_team,
+        away_team=away_team,
+        season=min(comp.start_date.year for comp in predictor.common_competitions),
+    )
+    if home_matches:
+        logger.info(
+            f"Update [{len(home_matches)}] matches for team [{home_team.short_name}]"
+        )
+        session.add_all(home_matches)
+    if away_matches:
+        logger.info(
+            f"Update [{len(home_matches)}] matches for team [{home_team.short_name}]"
+        )
+        session.add_all(home_matches)
+    session.commit()
+    for m in home_matches + away_matches:
+        session.refresh(m)
 
-    data_api_service = FootballDataApiService(
-        current_app.state.config.FOOTBALL_DATA_API_KEY
+    logger.info("Aggregate matches statistics")
+    predictor.enhance_team_statistics(
+        pd.DataFrame([m.model_dump(mode="json") for m in home_matches]),
+        pd.DataFrame([m.model_dump(mode="json") for m in away_matches]),
     )
-
-    start_date = min(
-        [
-            *[league.start_date for league in common_leagues],
-            *[league.start_date for league in common_leagues],
-        ]
-    )
-    logger.info(
-        f"Getting matches for teams [{home_team.short_name}] and [{away_team.short_name}] "
-        f"for season [{start_date.year}]"
-    )
-    home_matches, home_team_result = data_api_service.get_team_matches(
-        home_team.data_id, season=start_date.year
-    )
-    away_matches, away_team_result = data_api_service.get_team_matches(
-        away_team.data_id, season=start_date.year
-    )
-    logger.info(
-        f"Getting statistics for teams [{home_team.short_name}] and [{away_team.short_name}] "
-        f"since [{start_date.strftime('%Y-%m-%d')}]"
-    )
-
-    logger.info(
-        f"Found [{home_matches.shape[0]}] matches for team [{home_team.short_name}] "
-        f"and [{away_matches.shape[0]}] matches for team [{away_team.short_name}]"
-    )
-    predictor = Predictor(home_team=home_team, away_team=away_team)
-    predictor.enhance_team_statistics(home_matches, away_matches)
 
     try:
-        return predictor.simulate()
+        prediction = predictor.simulate()
+        return ResultPredictions(
+            home_team=home_team,
+            away_team=away_team,
+            home_stats=predictor.home_stats,
+            away_stats=predictor.away_stats,
+            prediction=prediction,
+        )
     except PredictorError as e:
         logger.error(f"Error during prediction: {str(e)}")
         raise HTTPException(
