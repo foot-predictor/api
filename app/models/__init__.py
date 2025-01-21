@@ -1,9 +1,9 @@
 from sqlmodel import SQLModel
 
 from models.competitions import Competition, CompetitionTeamLink, CompetitionType
-from models.matchs import MatchStatistics, MatchStatus
-from models.predictions import PredictionIN, Predictions, ThresholdGoal
-from models.teams import Team, TeamAllStats, TeamCreate, TeamSideStats, TeamUpdate
+from models.matchs import MatchResult, MatchSide, MatchStatistics, MatchStatus
+from models.predictions import PredictionIN, ResultPredictions
+from models.teams import Team, TeamCreate
 
 __all__ = [
     "SQLModel",
@@ -11,13 +11,11 @@ __all__ = [
     "CompetitionTeamLink",
     "Competition",
     "Team",
-    "TeamSideStats",
-    "TeamAllStats",
     "TeamCreate",
-    "TeamUpdate",
     "PredictionIN",
-    "Predictions",
-    "ThresholdGoal",
+    "ResultPredictions",
     "MatchStatistics",
     "MatchStatus",
+    "MatchSide",
+    "MatchResult",
 ]
