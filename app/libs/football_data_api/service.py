@@ -67,13 +67,12 @@ class FootballDataApiService:
         df = df.filter(
             [
                 "id",
-                "matchday",
+                "status",
+                "utcDate",
                 "homeTeam.id",
                 "homeTeam.name",
-                "homeTeam.crest",
                 "awayTeam.id",
                 "awayTeam.name",
-                "awayTeam.crest",
                 "score.winner",
                 "score.fullTime.home",
                 "score.fullTime.away",
