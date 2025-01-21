@@ -1,8 +1,8 @@
 """Create match stats model
 
-Revision ID: 1be7e5af2d2f
+Revision ID: 49d59174ccdb
 Revises: 7469093c6155
-Create Date: 2025-01-19 11:15:37.013293
+Create Date: 2025-01-19 15:56:17.903925
 
 """
 from typing import Sequence, Union
@@ -13,7 +13,7 @@ import sqlmodel.sql.sqltypes
 
 
 # revision identifiers, used by Alembic.
-revision: str = '1be7e5af2d2f'
+revision: str = '49d59174ccdb'
 down_revision: Union[str, None] = '7469093c6155'
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -27,15 +27,16 @@ def upgrade() -> None:
     sa.Column('data_id', sa.Integer(), nullable=True),
     sa.Column('livescore_id', sa.Integer(), nullable=True),
     sa.Column('transfermarkt_id', sa.Integer(), nullable=True),
-    sa.Column('status', sa.Enum('NOT_STARTED', 'FINISHED', name='matchstatus'), nullable=True),
     sa.Column('date', sa.DateTime(), nullable=False),
+    sa.Column('status', sa.Enum('NO_DATA', 'NOT_STARTED', 'FINISHED', name='matchstatus'), nullable=True),
+    sa.Column('side', sa.Enum('HOME', 'AWAY', name='matchside'), nullable=True),
+    sa.Column('result', sa.Enum('LOSE', 'DRAW', 'WIN', name='matchresult'), nullable=True),
     sa.Column('goal_for', sa.Integer(), nullable=True),
     sa.Column('goal_against', sa.Integer(), nullable=True),
     sa.Column('fouls', sa.Integer(), nullable=True),
     sa.Column('shots', sa.Integer(), nullable=True),
     sa.Column('shots_off_goal', sa.Integer(), nullable=True),
     sa.Column('shots_on_goal', sa.Integer(), nullable=True),
-    sa.Column('attacks', sa.Integer(), nullable=True),
     sa.Column('possession', sa.Integer(), nullable=True),
     sa.Column('livescore_xg', sa.Float(), nullable=True),
     sa.ForeignKeyConstraint(['team_id'], ['team.id'], ondelete='CASCADE'),
