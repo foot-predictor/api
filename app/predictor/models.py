@@ -161,6 +161,11 @@ class ThresholdGoal(SQLModel):
     over: int
 
 
+class ExactScore(SQLModel):
+    score: str
+    probability: int
+
+
 class Prediction(SQLModel):
     home_win: int = 0
     draw: int = 0
@@ -169,4 +174,4 @@ class Prediction(SQLModel):
     global_threshold_goals: list[ThresholdGoal] = []
     home_threshold_goals: list[ThresholdGoal] = []
     away_threshold_goals: list[ThresholdGoal] = []
-    exact_score: list[dict[str, int]] = []
+    exact_score: list[ExactScore] = []

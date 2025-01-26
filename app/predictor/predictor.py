@@ -6,7 +6,13 @@ import pandas as pd
 from models.matchs import MatchResult, MatchSide
 from models.teams import Team
 
-from predictor.models import GlobalStatistics, Prediction, TeamStatistics, ThresholdGoal
+from predictor.models import (
+    ExactScore,
+    GlobalStatistics,
+    Prediction,
+    TeamStatistics,
+    ThresholdGoal,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -149,6 +155,9 @@ class Predictor:
             # Track exact score
             exact_scores.append((home_goals, away_goals))
 
+        most_commonn_score = Counter(exact_scores).most_common()[:3]
+        nb_score = sum(count for _, count in most_commonn_score)
+
         return Prediction(
             home_win=round((home_win / iterations) * 100),
             draw=round((draw / iterations) * 100),
@@ -181,7 +190,10 @@ class Predictor:
                 for threshold in goals.keys()
             ],
             exact_score=[
-                {f"{score[0]}-{score[1]}": round((count / iterations) * 100)}
-                for score, count in Counter(exact_scores).most_common()[:3]
+                ExactScore(
+                    score=f"{score[0]}-{score[1]}",
+                    probability=round((count / nb_score) * 100),
+                )
+                for score, count in most_commonn_score
             ],
         )
