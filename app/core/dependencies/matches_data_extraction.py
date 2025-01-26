@@ -1,6 +1,6 @@
 import logging
 import time
-from datetime import datetime
+from datetime import datetime, timedelta
 from typing import Annotated
 
 import pandas as pd
@@ -71,7 +71,7 @@ class MatchesDataExtractor:
     def _retrieve_matches(
         self, team: Team, season: int, now: datetime
     ) -> list[MatchStatistics]:
-        matches = [m for m in team.matches if m.date < now]
+        matches = [m for m in team.matches if m.date < (now - timedelta(days=1))]
         logger.info(
             f"Extract [{len(matches)}] matches statistics of team [{team.short_name}]"
         )
@@ -81,7 +81,7 @@ class MatchesDataExtractor:
             data_df, _ = self.data_api.get_team_matches(team.data_id, season)
 
         statistics = []
-        for match in [m for m in team.matches if m.date < now]:
+        for match in matches:
             if match.status == MatchStatus.NO_DATA:
                 logger.info(
                     f"No statistics found for match [{match.data_id}] of team [{team.short_name}], so extract from api"
