@@ -97,7 +97,7 @@ class MatchesDataExtractor:
                 match = self._enrichment_match_statistics(
                     match, data_match, livescore_match
                 )
-                time.sleep(0.2)
+                time.sleep(0.3)
 
             statistics.append(match)
         return statistics
