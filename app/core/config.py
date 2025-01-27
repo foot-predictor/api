@@ -32,6 +32,8 @@ class Settings(BaseSettings):
 
     FOOTBALL_DATA_API_KEY: str
     RAPIDAPI_KEY: str
+    RAPIDAPI_KEY_2: str
+    RAPIDAPI_KEY_3: str
     LIVESCORE_API_HOST: str
     TRANSFERMARKT_API_HOST: str
 

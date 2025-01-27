@@ -6,10 +6,11 @@ logger = logging.getLogger(__name__)
 
 
 class LiveScoreApiService:
-    def __init__(self, api_key: str, host: str):
+    def __init__(self, api_key: str, host: str, api_keys_spare: list[str] = None):
         self._api_key = api_key
         self._host = host
         self._retry_count = 0
+        self._api_keys_spare = api_keys_spare
 
     def _request(
         self,
@@ -24,6 +25,15 @@ class LiveScoreApiService:
             },
             params=filters,
         )
+        if response.status_code == 429:
+            logger.info("Maximum requests reached, rotating API key.")
+            for key in [self._api_key, *self._api_keys_spare]:
+                if key == self._api_key:
+                    continue
+                self._api_key = key
+                logging.info("Choosing new API key")
+                return self._request(uri, filters)
+
         if response.status_code != 200:
             raise Exception(
                 f"Request failed [{response.status_code}] : {response.json()}"

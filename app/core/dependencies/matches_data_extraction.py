@@ -22,6 +22,10 @@ class MatchesDataExtractor:
         self.livescore_api = LiveScoreApiService(
             api_key=current_app.state.config.RAPIDAPI_KEY,
             host=current_app.state.config.LIVESCORE_API_HOST,
+            api_keys_spare=[
+                current_app.state.config.RAPIDAPI_KEY_2,
+                current_app.state.config.RAPIDAPI_KEY_3,
+            ],
         )
 
     @staticmethod
